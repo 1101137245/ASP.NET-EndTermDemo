@@ -6,12 +6,10 @@
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.material.min.css" />
-
     <script src="http://cdn.kendostatic.com/2015.1.429/js/jquery.min.js"></script>
     <script src="http://cdn.kendostatic.com/2015.1.429/js/kendo.all.min.js"></script>
     <script>
@@ -75,7 +73,7 @@
 
                 editable: {
                     confirmation: function (e) {
-                        return "確定刪除編號 " + e.Id + ","+e.Name +"?";
+                        return "確定刪除編號 " + e.Id + "," + e.Name + "?";
                     },
                     mode: "inline"
                 },
@@ -96,7 +94,7 @@
                           { field: "Description", title: "數量", width: "40px" },
                     { field: "Site", title: "座位", width: "40px" },
                     { field: "Price", title: "價格", width: "40px" },
-              
+
                     {
                         command: [{
                             title: "",
@@ -119,31 +117,28 @@
 
         });
     </script>
-
     <style type="text/css">
         body {
-            font-family: 'Kozuka Gothic Pr6N';
+            font-family: 'Kozuka Gothic Pr6N','微軟正黑體';
         }
 
-        h1 {
+        h1, label {
             color: royalblue;
+            font-family: '微軟正黑體';
         }
-
-        .ui-btn{
-             font-family: '微軟正黑體';
-             color: royalblue;
+        .ui-btn {
+            font-family: '微軟正黑體';
+            color: royalblue;
         }
     </style>
 </head>
 <body>
-
     <div data-theme="a" data-role="page" id="index">
         <div data-role="header">
             <h1>Kuas 訂票</h1>
             <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
             <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
         </div>
-
 
         <div data-role="main" class="ui-content">
             <div data-role="navbar">
@@ -216,7 +211,7 @@
                             <input type="time" value="22:30" />
                         </label>
                     </li>
-                    
+
                 </ul>
             </form>
         </div>
@@ -238,17 +233,13 @@
             }
         </script>
 
-
         <script>
             var app = new kendo.mobile.Application(document.body);
         </script>
-
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
         </div>
     </div>
-
-
 
     <!-- Page 2 -->
     <div data-role="page" id="search">
@@ -256,17 +247,14 @@
             <h1>查詢訂票</h1>
             <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
         </div>
-
         <div class="content-pane">
             <div id="grid"></div>
         </div>
-
 
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
         </div>
     </div>
-
     <!-- Page 3 -->
     <div data-role="page" id="addnew">
         <div data-role="header">
@@ -274,17 +262,14 @@
             <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
             <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
         </div>
-
         <div class="content-pane">
             <div id="grid"></div>
         </div>
-
 
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
         </div>
     </div>
-
     <!-- Page 4 -->
     <div data-role="page" id="4444">
         <div data-role="header">
@@ -292,16 +277,13 @@
             <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
             <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
         </div>
-
         <div class="content-pane">
             <div id="grid"></div>
         </div>
-
 
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
         </div>
     </div>
-
 </body>
 </html>
