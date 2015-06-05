@@ -152,6 +152,95 @@
                 </ul>
             </div>
         </div>
+        <div id="forms" data-role="view" data-title="Form Elements" data-init="initForm" data-use-native-scrolling="true">
+            <form action="./index.html">
+                <ul data-role="listview" data-style="inset">
+                    <li>
+                        <label>
+                            上車地點
+                            <select>
+                                <option value="First Option">First Option</option>
+                                <option value="Second Option">Second Option</option>
+                                <option value="Third Option">Third Option</option>
+                                <option value="Fourth Option">Fourth Option</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            下車地點
+                            <select id="dropdown">
+                                <option value="First Option">First Option</option>
+                                <option value="Second Option">Second Option</option>
+                                <option value="Third Option">Third Option</option>
+                                <option value="Fourth Option">Fourth Option</option>
+                                <option value="First Option">Fifth Option</option>
+                                <option value="Sixth Option">Sixth Option</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            乘車日期
+                            <input id="slider" type="range" max="100" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            乘車時間
+                            <input type="text" value="Text" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            班次
+                            <input type="password" value="password" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            購票人姓名
+                            <input type="search" value="search" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            Type date
+                            <input type="date" value="2012-03-22" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            Type time
+                            <input type="time" value="22:30" />
+                        </label>
+                    </li>
+                    
+                </ul>
+            </form>
+        </div>
+        <script>
+            function initForm() {
+                var body = $(".km-pane");
+
+                if (kendo.ui.DropDownList) {
+                    $("#dropdown").kendoDropDownList({
+                        // The options are needed only for the desktop demo, remove them for mobile.
+                        popup: { appendTo: body },
+                        animation: { open: { effects: body.hasClass("km-android") ? "fadeIn" : body.hasClass("km-ios") || body.hasClass("km-wp") ? "slideIn:up" : "slideIn:down" } }
+                    });
+                }
+
+                if (kendo.ui.Slider) {
+                    $("#slider").kendoSlider({ tooltip: { enabled: false } });
+                }
+            }
+        </script>
+
+
+        <script>
+            var app = new kendo.mobile.Application(document.body);
+        </script>
 
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
