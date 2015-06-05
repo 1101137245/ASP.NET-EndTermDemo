@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:tx="http://www.springframework.net/tx"
+         xmlns:aop="http://www.springframework.net/aop"
+         xmlns:db="http://www.springframework.net/database">
+
+  <!-- 遠端資料庫連線設定, TCP/IP 認證 -->
+  <!--<db:provider id="dbProvider" provider="SqlServer-2.0"
+    connectionString="Server=localhost;Database=KUAS;UID=sa;Password=123456;"/>-->
+
+  <!-- 本機資料庫連線設定, Windows 認證 -->
+  <!--<db:provider id="dbProvider" provider="SqlServer-2.0"
+    connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=KUAS;Integrated Security=True;MultipleActiveResultSets=True;"/>-->
+
+  <!-- LocalDB 連線設定, Windows 認證 -->
+  <db:provider id="dbProvider" provider="SqlServer-2.0"
+    connectionString="Data Source=JAMES_NB\SQLEXPRESS;Initial Catalog=KUAS;Integrated Security=True;MultipleActiveResultSets=True;"/>
+
+  <object id="adoTemplate" type="Spring.Data.Generic.AdoTemplate, Spring.Data">
+    <property name="DbProvider" ref="dbProvider"/>
+    <property name="DataReaderWrapperType" value="Spring.Data.Support.NullMappingDataReader, Spring.Data"/>
+  </object>
+  
+  <!-- Transaction 設定-->
+  <object id="transactionManager" type="Spring.Data.Core.AdoPlatformTransactionManager, Spring.Data">
+    <property name="DbProvider" ref="dbProvider"/>
+  </object>
+
+  <!-- AOP Transaction 設定-->
+  <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+      <tx:method name="Get*" read-only="true" />
+      <tx:method name="Load*" read-only="true" />
+      <tx:method name="Find*" read-only="true" />
+      <tx:method name="*" />
+    </tx:attributes>
+  </tx:advice>
+
+  <object id="serviceTxPointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
+    <property name="Pattern" value="KuasCore.Services.Impl.*Service" />
+  </object>
+
+  <aop:config>
+    <aop:advisor pointcut-ref="serviceTxPointcut" advice-ref="txAdvice" />
+  </aop:config>
+
+</objects>

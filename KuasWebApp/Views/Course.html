@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Employee</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.material.min.css" />
+
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div class="content-pane">
+        <div id="grid"></div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var UrlBase = "/";
+            $("#grid").kendoGrid({
+                dataSource: {
+                    pageSize: 5,
+                    dataType: "jsonp",
+                    transport: {
+                        read: {
+                            url: UrlBase+"api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "GET"
+                        },
+                        create: {
+                            url: UrlBase+"api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "POST"
+                        },
+                        update: {
+                            url: UrlBase+"api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "PUT"
+                        },
+                        destroy: {
+                            url: UrlBase + "api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "DELETE"
+                        },
+                        parameterMap: function (data, operation) {
+                            if (operation !== "read") {
+                                return kendo.stringify(data);
+                            }
+                        }
+                    },
+                    schema: {
+                        model: {
+                            id: "Id",
+                            fields: {
+                                Id  : { type: "string", editable: true, nullable: false },
+                                Name: { type: "string", editable: true, nullable: false },
+                                Description: { type: "string", editable: true },
+                                Date: { type: "string", editable: true, nullable: false },
+                                Time: { type: "string", editable: true, nullable: false },
+                                Aboard: { type: "string", editable: true, nullable: false },
+                                Getoff: { type: "string", editable: true, nullable: false },
+                                Number: { type: "string", editable: true, nullable: false },
+                                Site: { type: "string", editable: true, nullable: false },
+                                Price: { type: "string", editable: true, nullable: false },
+                            }
+                        }
+                    }
+
+                },
+                height: 550,
+                sortable: true,
+                scrollable: true,
+                sortable: true,
+                filterable: true,
+                editable: "inline",
+                toolbar: ["create"],
+                pageable: {
+                    input: true,
+                    numeric: false
+                },
+                columns: [
+                    { field: "Id"  , title: "課程編號" , width: "100px" },
+                    { field: "Name", title: "課程名稱", width: "100px" },
+                    { field: "Description", title: "課程描述", width: "160px" },
+                    { field: "Date", title: "課程名稱", width: "100px" },
+                    { field: "Time", title: "課程名稱", width: "100px" },
+                    { field: "Aboard", title: "課程名稱", width: "100px" },
+                    { field: "Getoff", title: "課程名稱", width: "100px" },
+                    { field: "Number", title: "課程名稱", width: "100px" },
+                    { field: "Site", title: "課程名稱", width: "100px" },
+                    { field: "Price", title: "課程名稱", width: "100px" },
+                    { command: ["edit", "destroy"], title: "Command", width: "250px" }
+                ]
+            });
+
+        });
+    </script>
+</body>
+</html>
