@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.material.min.css" />
+
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/kendo.all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var UrlBase = "/";
+            $("#grid").kendoGrid({
+                dataSource: {
+
+                    dataType: "jsonp",
+                    transport: {
+                        read: {
+                            url: UrlBase + "api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "GET"
+                        },
+                        create: {
+                            url: UrlBase + "api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "POST"
+                        },
+                        update: {
+                            url: UrlBase + "api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "PUT"
+                        },
+                        destroy: {
+                            url: UrlBase + "api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "DELETE"
+                        },
+                        parameterMap: function (data, operation) {
+                            if (operation !== "read") {
+                                return kendo.stringify(data);
+                            }
+                        }
+                    },
+                    schema: {
+                        model: {
+                            id: "Id",
+                            fields: {
+                                Id: { type: "string", editable: true, nullable: false },
+                                Name: { type: "string", editable: true, nullable: false },
+                                Description: { type: "string", editable: true },
+                                Date: { type: "string", editable: true, nullable: false },
+                                Time: { type: "string", editable: true, nullable: false },
+                                Aboard: { type: "string", editable: true, nullable: false },
+                                Getoff: { type: "string", editable: true, nullable: false },
+                                Number: { type: "string", editable: true, nullable: false },
+                                Site: { type: "string", editable: true, nullable: false },
+                                Price: { type: "string", editable: true, nullable: false }
+                            }
+                        }
+                    }
+
+                },
+                height: 400,
+                sortable: true,
+                scrollable: false,
+                sortable: true,
+                filterable: false,
+
+                editable: {
+                    confirmation: function (e) {
+                        return "確定刪除編號 " + e.Id + ","+e.Name +"?";
+                    },
+                    mode: "inline"
+                },
+                toolbar: [{
+                    type: "button",
+                    name: "create",
+                    text: "新增"
+                }],
+                pageable: false,
+                columns: [
+                    { field: "Id", title: "編號", width: "5px" },
+                    { field: "Name", title: "姓名", width: "40px" },
+                    { field: "Date", title: "日期", width: "40px" },
+                    { field: "Time", title: "時間", width: "40px" },
+                    { field: "Aboard", title: "上車站", width: "40px" },
+                    { field: "Getoff", title: "下車站", width: "40px" },
+                    { field: "Number", title: "車次", width: "40px" },
+                    { field: "Site", title: "座位", width: "40px" },
+                    { field: "Price", title: "價格", width: "40px" },
+                    { field: "Description", title: "備註", width: "40px" },
+                    {
+                        command: [{
+                            title: "",
+                            name: "edit",
+                            text: {
+                                edit: "修改",
+                                update: "新增",
+                                cancel: "取消",
+                            }
+                        }, {
+                            name: "destroy",
+                            text: "刪除"
+                        }],
+                        width: "40px", title: "Command",
+                    },
+
+
+                ]
+            });
+
+        });
+    </script>
+
+    <style type="text/css">
+        body {
+            font-family: 'Kozuka Gothic Pr6N';
+        }
+
+        h1 {
+            color: royalblue;
+        }
+
+        .ui-btn{
+             font-family: '微軟正黑體';
+             color: royalblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-theme="a" data-role="page" id="index">
+        <div data-role="header">
+            <h1>Kuas 訂票</h1>
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
+            <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
+        </div>
+
+
+        <div data-role="main" class="ui-content">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#addnew" data-icon="plus">開始訂票</a></li>
+                    <li><a href="#" data-icon="check">修改訂票</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="footer" style="text-align:center;">
+            2015 ASP.NET by KuasMis&reg;
+        </div>
+    </div>
+
+
+
+    <!-- Page 2 -->
+    <div data-role="page" id="search">
+        <div data-role="header">
+            <h1>查詢訂票</h1>
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
+        </div>
+
+        <div class="content-pane">
+            <div id="grid"></div>
+        </div>
+
+
+        <div data-role="footer" style="text-align:center;">
+            2015 ASP.NET by KuasMis&reg;
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div data-role="page" id="addnew">
+        <div data-role="header">
+            <h1>查詢訂票</h1>
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
+            <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
+        </div>
+
+        <div class="content-pane">
+            <div id="grid"></div>
+        </div>
+
+
+        <div data-role="footer" style="text-align:center;">
+            2015 ASP.NET by KuasMis&reg;
+        </div>
+    </div>
+
+    <!-- Page 4 -->
+    <div data-role="page" id="4444">
+        <div data-role="header">
+            <h1>查詢訂票</h1>
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
+            <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
+        </div>
+
+        <div class="content-pane">
+            <div id="grid"></div>
+        </div>
+
+
+        <div data-role="footer" style="text-align:center;">
+            2015 ASP.NET by KuasMis&reg;
+        </div>
+    </div>
+
+</body>
+</html>

@@ -152,6 +152,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\Course.html" />
+    <Content Include="Views\Index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
