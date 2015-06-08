@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
@@ -116,6 +115,61 @@
             });
 
         });
+
+
+    </script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $("#dareaselect").change(function () {
+
+                /*
+                //  先取得要移除項目的 index
+                var selectIndex = $("#dlocationselect").find(":selected").index();
+
+                //  移除選擇的項目
+                $("#dlocationselect").find(":selected").remove();
+
+                //  判斷移除項目後，原先的index是否還有option，有的話就直接將此option設定為選取狀態
+                //  捲軸就不會往上跑了
+                if ($('#locationselect option').get(selectIndex) != null) {
+                    $('#locationselect option').get(selectIndex).selected = true;
+                }
+                else {
+                    //  沒有項目的話，判斷select理是否還有option
+                    //  有的話，表示移除的項目為最後一個，就設定上一個option為選取狀態
+                    if ($('#locationselect option').length > 0) {
+                        $('#locationselect option').get(selectIndex - 1).selected = true;
+                    }
+                }
+
+                */
+                $("#dlocationselect option").empty();
+                $("#dlocationselect-button >span").remove();
+                
+                //$("#dlocationselect").empty();
+               
+                if ($("#dareaselect").val() == "1") {
+                    $("#dlocationselect").append($("<option></option>").attr("value", "臺北轉運站").text("臺北轉運站"));
+                } else if ($("#dareaselect").val() == "2") {
+                    $("#dlocationselect").append($("<option></option>").attr("value", "豐原站").text("豐原站"));
+                } else if ($("#dareaselect").val() == "3") {
+                    $("#dlocationselect").append($("<option></option>").attr("value", "彰化交流道站").text("彰化交流道站"));
+                } else if ($("#dareaselect").val() == "4") {
+                    $("#dlocationselect").append($("<option></option>").attr("value", "北港站").text("北港站"));
+                } else if ($("#dareaselect").val() == "5") {
+                    $("#dlocationselect").append($("<option></option>").attr("value", "北門站").text("北門站"));
+                }
+
+       
+
+            });
+
+
+
+        });
+
     </script>
     <style type="text/css">
         body {
@@ -126,6 +180,7 @@
             color: royalblue;
             font-family: '微軟正黑體';
         }
+
         .ui-btn {
             font-family: '微軟正黑體';
             color: royalblue;
@@ -139,7 +194,6 @@
             <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
             <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
         </div>
-
         <div data-role="main" class="ui-content">
             <div data-role="navbar">
                 <ul>
@@ -154,64 +208,105 @@
                     <li>
                         <label>
                             上車地點
-                            <select>
-                                <option value="First Option">First Option</option>
-                                <option value="Second Option">Second Option</option>
-                                <option value="Third Option">Third Option</option>
-                                <option value="Fourth Option">Fourth Option</option>
-                            </select>
                         </label>
+                        <select id="areaselect">
+                            <option value="1" disabled>==北桃竹苗區==</option>
+                            <option value="臺北轉運站">臺北轉運站</option>
+                            <option value="三重站">三重站</option>
+                            <option value="南崁站">南崁站</option>
+                            <option value="中壢站">中壢站</option>
+                            <option value="板橋站">板橋站</option>
+                            <option value="中和站">中和站</option>
+                            <option value="市府轉運站">市府轉運站</option>
+                            <option value="三峽站">三峽站</option>
+                            <option value="景美站">景美站</option>
+                            <option value="三峽站">新店站</option>
+
+                            <option value="2" disabled>==台中區==</option>
+                            <option value="豐原站">豐原站</option>
+                            <option value="東勢站">東勢站</option>
+                            <option value="台中車站">台中車站</option>
+                            <option value="水湳站">水湳站</option>
+                            <option value="朝馬站">朝馬站</option>
+
+                            <option value="3" disabled>==彰化南投區==</option>
+                            <option value="彰化交流道站">彰化交流道站</option>
+                            <option value="彰化站">彰化站</option>
+                            <option value="員林站">員林站</option>
+                            <option value="溪湖站">溪湖站</option>
+                            <option value="二林站">二林站</option>
+
+                            <option value="4" disabled>==雲林嘉義區==</option>
+                            <option value="彰化交流道站">彰化交流道站</option>
+                            <option value="北港站">北港站</option>
+                            <option value="虎尾站">虎尾站</option>
+                            <option value="西螺站">西螺站</option>
+                            <option value="嘉義轉運站">嘉義轉運站</option>
+                            <option value="嘉義北港路站">嘉義北港路站</option>
+                            <option value="大林站">大林站</option>
+
+                            <option value="5" disabled>==南高屏區==</option>
+                            <option value="北門站">北門站</option>
+                            <option value="鹽行站">鹽行站</option>
+                            <option value="新營站">新營站</option>
+                            <option value="麻豆站">麻豆站</option>
+                            <option value="仁德站">仁德站</option>
+                            <option value="中華站">中華站</option>
+                            <option value="建國站">建國站</option>
+                            <option value="中正站">中正站</option>
+                            <option value="楠梓站">楠梓站</option>
+                            <option value="岡山站">岡山站</option>
+                            <option value="屏東站">屏東站</option>
+                            <option value="麟洛站">麟洛站</option>
+                        </select>
+
                     </li>
                     <li>
                         <label>
-                            下車地點
-                            <select id="dropdown">
-                                <option value="First Option">First Option</option>
-                                <option value="Second Option">Second Option</option>
-                                <option value="Third Option">Third Option</option>
-                                <option value="Fourth Option">Fourth Option</option>
-                                <option value="First Option">Fifth Option</option>
-                                <option value="Sixth Option">Sixth Option</option>
+                            <label>
+                                下車地點
+                            </label>
+                            下車區域
+                            <select id="dareaselect">
+                                <option value="First Option" disabled>請選擇區域</option>
+                                <option value="1">北桃竹苗區</option>
+                                <option value="2">台中區</option>
+                                <option value="3">彰化南投區</option>
+                                <option value="4">雲林嘉義區</option>
+                                <option value="5">南高屏區</option>
+                            </select>
+                            下車站
+                            <select id="dlocationselect">
+                                <option value="First Option">請選擇區域</option>
+                                <option value="臺北轉運站">臺北轉運站</option>
+
                             </select>
                         </label>
                     </li>
                     <li>
                         <label>
                             乘車日期
-                            <input id="slider" type="range" max="100" />
                         </label>
+                        <input type="date" value="2015-06-08" />
                     </li>
                     <li>
                         <label>
                             乘車時間
-                            <input type="text" value="Text" />
+                            <input type="time" value="22:30" />
                         </label>
                     </li>
                     <li>
                         <label>
                             班次
-                            <input type="password" value="password" />
+                            <input type="text" placeholder="班次" />
                         </label>
                     </li>
                     <li>
-                        <label>
+                        <label data-icon="check">
                             購票人姓名
-                            <input type="search" value="search" />
+                            <input type="text" placeholder="姓名" />
                         </label>
                     </li>
-                    <li>
-                        <label>
-                            Type date
-                            <input type="date" value="2012-03-22" />
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            Type time
-                            <input type="time" value="22:30" />
-                        </label>
-                    </li>
-
                 </ul>
             </form>
         </div>
@@ -232,7 +327,6 @@
                 }
             }
         </script>
-
         <script>
             var app = new kendo.mobile.Application(document.body);
         </script>
@@ -240,7 +334,6 @@
             2015 ASP.NET by KuasMis&reg;
         </div>
     </div>
-
     <!-- Page 2 -->
     <div data-role="page" id="search">
         <div data-role="header">
@@ -250,7 +343,6 @@
         <div class="content-pane">
             <div id="grid"></div>
         </div>
-
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
         </div>
@@ -265,7 +357,6 @@
         <div class="content-pane">
             <div id="grid"></div>
         </div>
-
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
         </div>
@@ -280,7 +371,6 @@
         <div class="content-pane">
             <div id="grid"></div>
         </div>
-
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
         </div>
