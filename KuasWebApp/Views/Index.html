@@ -122,52 +122,104 @@
 
 
         $(document).ready(function () {
-            $("#dareaselect").change(function () {
+            var North = '<option value="臺北轉運站">臺北轉運站</option>\n\
+                            <option value="三重站">三重站</option>\n\
+                            <option value="南崁站">南崁站</option>\n\
+                            <option value="中壢站">中壢站</option>\n\
+                            <option value="板橋站">板橋站</option>\n\
+                            <option value="中和站">中和站</option>\n\
+                            <option value="市府轉運站">市府轉運站</option>\n\
+                            <option value="三峽站">三峽站</option>\n\
+                            <option value="景美站">景美站</option>\n\
+                            <option value="三峽站">新店站</option>';
 
-                /*
-                //  先取得要移除項目的 index
-                var selectIndex = $("#dlocationselect").find(":selected").index();
+            var Taichung = '<option value="豐原站">豐原站</option>\n\
+                            <option value="東勢站">東勢站</option>\n\
+                            <option value="台中車站">台中車站</option>\n\
+                            <option value="水湳站">水湳站</option>\n\
+                            <option value="朝馬站">朝馬站</option>';
 
-                //  移除選擇的項目
-                $("#dlocationselect").find(":selected").remove();
+            var Changhua = '<option value="彰化交流道站">彰化交流道站</option>\n\
+                            <option value="彰化站">彰化站</option>\n\
+                            <option value="員林站">員林站</option>\n\
+                            <option value="溪湖站">溪湖站</option>\n\
+                            <option value="二林站">二林站</option>';
 
-                //  判斷移除項目後，原先的index是否還有option，有的話就直接將此option設定為選取狀態
-                //  捲軸就不會往上跑了
-                if ($('#locationselect option').get(selectIndex) != null) {
-                    $('#locationselect option').get(selectIndex).selected = true;
+            var Yunlin = '<option value="北港站">北港站</option>\n\
+                            <option value="虎尾站">虎尾站</option>\n\
+                            <option value="西螺站">西螺站</option>\n\
+                            <option value="嘉義轉運站">嘉義轉運站</option>\n\
+                            <option value="嘉義北港路站">嘉義北港路站</option>\n\
+                            <option value="大林站">大林站</option>';
+
+            var South = '<option value="北門站">北門站</option>\n\
+                            <option value="鹽行站">鹽行站</option>\n\
+                            <option value="新營站">新營站</option>\n\
+                            <option value="麻豆站">麻豆站</option>\n\
+                            <option value="仁德站">仁德站</option>\n\
+                            <option value="中華站">中華站</option>\n\
+                            <option value="建國站">建國站</option>\n\
+                            <option value="中正站">中正站</option>\n\
+                            <option value="楠梓站">楠梓站</option>\n\
+                            <option value="岡山站">岡山站</option>\n\
+                            <option value="屏東站">屏東站</option>\n\
+                            <option value="麟洛站">麟洛站</option>';
+
+            $("#AboardArea").change(function () {
+                $("#AboardStation > *").remove();
+                $('<option value="First Option">請選擇區域</option>').appendTo("#AboardStation");
+
+                switch ($("#AboardArea").val()) {
+                    case "1":
+                        $(North).appendTo("#AboardStation");
+                        break;
+                    case "2":
+                        $(Taichung).appendTo("#AboardStation");
+                        break;
+                    case "3":
+                        $(Changhua).appendTo("#AboardStation");
+                        break;
+                    case "4":
+                        $(Yunlin).appendTo("#AboardStation");
+                        break;
+                    case "5":
+                        $(South).appendTo("#AboardStation");
+                        break;
+                    default:
+                        alert("請重新選擇上車區域");
+                        break;
+
                 }
-                else {
-                    //  沒有項目的話，判斷select理是否還有option
-                    //  有的話，表示移除的項目為最後一個，就設定上一個option為選取狀態
-                    if ($('#locationselect option').length > 0) {
-                        $('#locationselect option').get(selectIndex - 1).selected = true;
-                    }
-                }
-
-                */
-                $("#dlocationselect option").empty();
-                $("#dlocationselect-button >span").remove();
-                
-                //$("#dlocationselect").empty();
-               
-                if ($("#dareaselect").val() == "1") {
-                    $("#dlocationselect").append($("<option></option>").attr("value", "臺北轉運站").text("臺北轉運站"));
-                } else if ($("#dareaselect").val() == "2") {
-                    $("#dlocationselect").append($("<option></option>").attr("value", "豐原站").text("豐原站"));
-                } else if ($("#dareaselect").val() == "3") {
-                    $("#dlocationselect").append($("<option></option>").attr("value", "彰化交流道站").text("彰化交流道站"));
-                } else if ($("#dareaselect").val() == "4") {
-                    $("#dlocationselect").append($("<option></option>").attr("value", "北港站").text("北港站"));
-                } else if ($("#dareaselect").val() == "5") {
-                    $("#dlocationselect").append($("<option></option>").attr("value", "北門站").text("北門站"));
-                }
-
-       
-
             });
 
+            $("#GetoffArea").change(function () {
+                $("#GetoffStation > *").remove();
+                $('<option value="First Option">請選擇區域</option>').appendTo("#GetoffStation");
+
+                switch ($("#GetoffArea").val()) {
+                    case "1":
+                        $(North).appendTo("#GetoffStation");
+                        break;
+                    case "2":
+                        $(Taichung).appendTo("#GetoffStation");
+                        break;
+                    case "3":
+                        $(Changhua).appendTo("#GetoffStation");
+                        break;
+                    case "4":
+                        $(Yunlin).appendTo("#GetoffStation");
+                        break;
+                    case "5":
+                        $(South).appendTo("#GetoffStation");
+                        break;
+                    default:
+                        alert("請重新選擇下車區域");
+                        break;
+
+                }
 
 
+            });
         });
 
     </script>
@@ -207,79 +259,43 @@
                 <ul data-role="listview" data-style="inset">
                     <li>
                         <label>
-                            上車地點
-                        </label>
-                        <select id="areaselect">
-                            <option value="1" disabled>==北桃竹苗區==</option>
-                            <option value="臺北轉運站">臺北轉運站</option>
-                            <option value="三重站">三重站</option>
-                            <option value="南崁站">南崁站</option>
-                            <option value="中壢站">中壢站</option>
-                            <option value="板橋站">板橋站</option>
-                            <option value="中和站">中和站</option>
-                            <option value="市府轉運站">市府轉運站</option>
-                            <option value="三峽站">三峽站</option>
-                            <option value="景美站">景美站</option>
-                            <option value="三峽站">新店站</option>
-
-                            <option value="2" disabled>==台中區==</option>
-                            <option value="豐原站">豐原站</option>
-                            <option value="東勢站">東勢站</option>
-                            <option value="台中車站">台中車站</option>
-                            <option value="水湳站">水湳站</option>
-                            <option value="朝馬站">朝馬站</option>
-
-                            <option value="3" disabled>==彰化南投區==</option>
-                            <option value="彰化交流道站">彰化交流道站</option>
-                            <option value="彰化站">彰化站</option>
-                            <option value="員林站">員林站</option>
-                            <option value="溪湖站">溪湖站</option>
-                            <option value="二林站">二林站</option>
-
-                            <option value="4" disabled>==雲林嘉義區==</option>
-                            <option value="彰化交流道站">彰化交流道站</option>
-                            <option value="北港站">北港站</option>
-                            <option value="虎尾站">虎尾站</option>
-                            <option value="西螺站">西螺站</option>
-                            <option value="嘉義轉運站">嘉義轉運站</option>
-                            <option value="嘉義北港路站">嘉義北港路站</option>
-                            <option value="大林站">大林站</option>
-
-                            <option value="5" disabled>==南高屏區==</option>
-                            <option value="北門站">北門站</option>
-                            <option value="鹽行站">鹽行站</option>
-                            <option value="新營站">新營站</option>
-                            <option value="麻豆站">麻豆站</option>
-                            <option value="仁德站">仁德站</option>
-                            <option value="中華站">中華站</option>
-                            <option value="建國站">建國站</option>
-                            <option value="中正站">中正站</option>
-                            <option value="楠梓站">楠梓站</option>
-                            <option value="岡山站">岡山站</option>
-                            <option value="屏東站">屏東站</option>
-                            <option value="麟洛站">麟洛站</option>
-                        </select>
-
-                    </li>
-                    <li>
-                        <label>
                             <label>
-                                下車地點
+                                上車地點
                             </label>
-                            下車區域
-                            <select id="dareaselect">
-                                <option value="First Option" disabled>請選擇區域</option>
+                            <select id="AboardArea">
+                                <option value="First Option" disabled>請選擇上車區域</option>
                                 <option value="1">北桃竹苗區</option>
                                 <option value="2">台中區</option>
                                 <option value="3">彰化南投區</option>
                                 <option value="4">雲林嘉義區</option>
                                 <option value="5">南高屏區</option>
                             </select>
-                            下車站
-                            <select id="dlocationselect">
-                                <option value="First Option">請選擇區域</option>
-                                <option value="臺北轉運站">臺北轉運站</option>
-
+                            <label>
+                                　
+                            </label>
+                            <select id="AboardStation">
+                                <option value="First Option">請選擇上車站</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <label>
+                                下車地點
+                            </label>
+                            <select id="GetoffArea">
+                                <option value="First Option" disabled>請選擇下車區域</option>
+                                <option value="1">北桃竹苗區</option>
+                                <option value="2">台中區</option>
+                                <option value="3">彰化南投區</option>
+                                <option value="4">雲林嘉義區</option>
+                                <option value="5">南高屏區</option>
+                            </select>
+                            <label>
+                                下車站
+                            </label>
+                            <select id="GetoffStation">
+                                <option value="First Option">請選擇下車站</option>
                             </select>
                         </label>
                     </li>
