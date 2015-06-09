@@ -50,7 +50,7 @@
         AddTicket();
     });
 
-    
+
 });
 
 function ChangeStation(x) {
@@ -88,7 +88,7 @@ function AddTicket() {
         url: "http://localhost:1073/api/Course",
         type: 'POST',
         data: {
-            Id: "2",
+            Id: "20",
             Name: $("#Name").val(),
             Description: $("#Quantity").val(),
             Date: $("#Date").val(),
@@ -102,6 +102,8 @@ function AddTicket() {
         dataType: 'json',
         success: function (data) {
             alert("新增成功   網頁將於2秒後跳轉...");
+            location.reload();
+            
         },
         error: function () {
             alert("");
