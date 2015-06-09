@@ -33,6 +33,7 @@ namespace KuasCore.Dao.Impl
             parameters.Add("Number", DbType.String).Value = course.Number;
             parameters.Add("Site", DbType.String).Value = course.Site;
             parameters.Add("Price", DbType.String).Value = course.Price;
+            parameters.Add("Description", DbType.String).Value = course.Description;
 
             ExecuteNonQuery(command, parameters);
         }

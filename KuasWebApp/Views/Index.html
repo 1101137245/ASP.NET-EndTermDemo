@@ -90,7 +90,7 @@
                     { field: "Aboard", title: "上車站", width: "40px" },
                     { field: "Getoff", title: "下車站", width: "40px" },
                     { field: "Number", title: "車次", width: "40px" },
-                          { field: "Description", title: "數量", width: "40px" },
+                    { field: "Description", title: "數量", width: "40px" },
                     { field: "Site", title: "座位", width: "40px" },
                     { field: "Price", title: "價格", width: "40px" },
 
@@ -218,8 +218,33 @@
 
                 }
 
-
             });
+            $("#submit").click(function () {
+                $.ajax({
+                    url: "http://localhost:1073/api/Course",
+                    type: 'POST',
+                    data: {
+                        Id: "2",
+                        Name: $("#Name").val(),
+                        Description: $("#Quantity").val(),
+                        Date: $("#Date").val(),
+                        Time: $("#Time").val(),
+                        Aboard: $("#AboardStation").val(),
+                        Getoff: $("#GetoffStation").val(),   
+                        Number: "1620",
+                        Site: "10",
+                        Price: "500"
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        alert("新增成功   網頁將於2秒後跳轉...");
+                    },
+                    error: function () {
+                        alert("");
+                    }
+                });
+            });
+
         });
 
     </script>
@@ -303,24 +328,36 @@
                         <label>
                             乘車日期
                         </label>
-                        <input type="date" value="2015-06-08" />
+                        <input id="Date" type="date" value="2015-06-08" />
                     </li>
                     <li>
                         <label>
                             乘車時間
-                            <input type="time" value="22:30" />
+                            <input id="Time" type="time" value="22:30" />
                         </label>
                     </li>
                     <li>
                         <label>
                             班次
-                            <input type="text" placeholder="班次" />
+                            <input id="Number" type="text" placeholder="班次" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            訂票張數
+                            <input id="Quantity" type="text" placeholder="訂票張數" />
                         </label>
                     </li>
                     <li>
                         <label data-icon="check">
                             購票人姓名
-                            <input type="text" placeholder="姓名" />
+                            <input id="Name" type="text" placeholder="姓名" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <button id="submit">送出</button> 
+                            <button id="clear">清除</button> 
                         </label>
                     </li>
                 </ul>
