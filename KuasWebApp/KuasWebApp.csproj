@@ -140,7 +140,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="App_Data\MidTermExamDB.mdf" />
-    <Content Include="App_Data\MidTermExamDB_log.ldf" />
+    <Content Include="App_Data\MidTermExamDB_log.ldf">
+      <DependentUpon>MidTermExamDB.mdf</DependentUpon>
+    </Content>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
