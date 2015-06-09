@@ -230,7 +230,7 @@
                         Date: $("#Date").val(),
                         Time: $("#Time").val(),
                         Aboard: $("#AboardStation").val(),
-                        Getoff: $("#GetoffStation").val(),   
+                        Getoff: $("#GetoffStation").val(),
                         Number: "1620",
                         Site: "10",
                         Price: "500"
@@ -245,6 +245,12 @@
                 });
             });
 
+            $(".timePicker").kendoTimePicker({
+                interval: 120,
+                format: "HH:mm",
+                min: new Date(2015, 6, 15, 6, 10, 0),
+                max: new Date(2015, 6, 15, 24, 10, 0),
+            });
         });
 
     </script>
@@ -296,7 +302,7 @@
                                 <option value="5">南高屏區</option>
                             </select>
                             <label>
-                                　
+
                             </label>
                             <select id="AboardStation">
                                 <option value="First Option">請選擇上車站</option>
@@ -333,10 +339,10 @@
                     <li>
                         <label>
                             乘車時間
-                            <input id="Time" type="time" value="22:30" />
                         </label>
+                        <input id="Time" class="timePicker" value="06:00: AM" />
                     </li>
-                    <li>
+                    <li>  
                         <label>
                             班次
                             <input id="Number" type="text" placeholder="班次" />
@@ -356,8 +362,8 @@
                     </li>
                     <li>
                         <label>
-                            <button id="submit">送出</button> 
-                            <button id="clear">清除</button> 
+                            <button id="submit">送出</button>
+                            <button id="clear">清除</button>
                         </label>
                     </li>
                 </ul>
