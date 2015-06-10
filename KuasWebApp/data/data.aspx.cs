@@ -19,19 +19,65 @@ namespace KuasWebApp.data
         protected void Page_Load(object sender, EventArgs e)
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
-            var responseEntities = new List<Person>()
+            var responseEntities = new List<ClassBus>()
         {
-            new Person{ Aboard="臺北轉運站", Getoff="豐原站",Number="1001"},
-            new Person{ Aboard="臺北轉運站", Getoff="豐原站",Number="1002"},
-            new Person{ Aboard="臺北轉運站", Getoff="豐原站",Number="1003"},
-            new Person{ Aboard="臺北轉運站", Getoff="東勢站",Number="1004"},
-            new Person{ Aboard="臺北轉運站", Getoff="東勢站",Number="1005"},
-            new Person{ Aboard="臺北轉運站", Getoff="東勢站",Number="1005"},
-            new Person{ Aboard="臺北轉運站", Getoff="台中車站",Number="1006"},
-            new Person{ Aboard="臺北轉運站", Getoff="台中車站",Number="1007"},
-            new Person{ Aboard="臺北轉運站", Getoff="台中車站",Number="1007"},
-            new Person{ Aboard="臺北轉運站", Getoff="台中車站",Number="1008"},
-            new Person{ Aboard="臺北轉運站", Getoff="台中車站",Number="1009"},
+            new ClassBus{ Aboard="臺北轉運站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="臺北轉運站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new 
+            ClassBus{ Aboard="臺北轉運站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="臺北轉運站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="臺北轉運站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
+           
+            new ClassBus{ Aboard="三重站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="三重站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="三重站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="三重站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="三重站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
+
+            new ClassBus{ Aboard="南崁站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="南崁站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="南崁站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="南崁站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="南崁站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
+
+            new ClassBus{ Aboard="板橋站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="板橋站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="板橋站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="板橋站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="板橋站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
+
+            new ClassBus{ Aboard="中和站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="中和站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="中和站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="中和站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="中和站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
+
+            new ClassBus{ Aboard="市府轉運站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="市府轉運站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new
+            ClassBus{ Aboard="市府轉運站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="市府轉運站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="市府轉運站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
+
+            new ClassBus{ Aboard="三峽站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="三峽站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="三峽站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="三峽站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="三峽站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
+
+            new ClassBus{ Aboard="新店站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="新店站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="新店站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="新店站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="新店站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
+      
+            
+            new ClassBus{ Aboard="市府轉運站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="市府轉運站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new 
+            ClassBus{ Aboard="市府轉運站", Getoff="台中車站",Number="1001",Price="210",Class1="120",Class2="45",Class3="45",Class4="45"},
+            new ClassBus{ Aboard="市府轉運站", Getoff="水湳站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
+            new ClassBus{ Aboard="市府轉運站", Getoff="朝馬站",Number="1001",Price="200",Class1="120",Class2="60",Class3="45",Class4="45"},
       
         };
 
@@ -40,11 +86,16 @@ namespace KuasWebApp.data
             Response.End();
         }
     }
-    public class Person
+    public class ClassBus
     {
         public string Aboard { get; set; }
         public string Getoff { get; set; }
-        public string Number { get; set; }
+        public string Number { get; set; } //班次
+        public string Price { get; set; }
+        public string Class1 { get; set; }
+        public string Class2 { get; set; }
+        public string Class3 { get; set; }
+        public string Class4 { get; set; }
     }
 }
 
