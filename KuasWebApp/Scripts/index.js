@@ -51,6 +51,21 @@
     });
 
 
+    $.ajax({
+        url: "../data/data.aspx",
+        type: 'GET',
+        data: {
+            
+        },
+        dataType: 'json',
+        success: function (data) {
+           console.log(data)
+
+        },
+        error: function () {
+            console.log("error");
+        }
+    });
 });
 
 function ChangeStation(x) {
