@@ -8,7 +8,7 @@
                             <option value="市府轉運站">市府轉運站</option>\n\
                             <option value="三峽站">三峽站</option>\n\
                             <option value="景美站">景美站</option>\n\
-                            <option value="三峽站">新店站</option>';
+                            <option value="新店站">新店站</option>';
     Taichung = '<option value="豐原站">豐原站</option>\n\
                             <option value="東勢站">東勢站</option>\n\
                             <option value="台中車站">台中車站</option>\n\
@@ -55,11 +55,11 @@
         url: "../data/data.aspx",
         type: 'GET',
         data: {
-            
+
         },
         dataType: 'json',
         success: function (data) {
-           console.log(data)
+            console.log(data)
 
         },
         error: function () {
