@@ -88,11 +88,12 @@ function AddTicket() {
         url: "http://localhost:1073/api/Course",
         type: 'POST',
         data: {
-            Id: "20",
+            Id: "5487",
             Name: $("#Name").val(),
             Description: $("#Quantity").val(),
             Date: $("#Date").val(),
-            Time: $("#Time").val(),
+            //            Time: $("#Time").val(),
+            Time: "5487",
             Aboard: $("#AboardStation").val(),
             Getoff: $("#GetoffStation").val(),
             Number: "1620",
@@ -101,9 +102,9 @@ function AddTicket() {
         },
         dataType: 'json',
         success: function (data) {
-            alert("新增成功   網頁將於2秒後跳轉...");
+            SuccessAdd();
             location.reload();
-            
+
         },
         error: function () {
             alert("");
@@ -111,5 +112,26 @@ function AddTicket() {
     });
 
 
+
+}
+function SuccessAdd() {
+
+    $("#addialog").kendoWindow({
+        animation: {
+            open: {
+                duration: 250, effects: "fade:in"
+            },
+            close: {
+                duration: 250, effects: "fade:out"
+            }
+        },
+        visible: false,
+        open: false,
+        title: "", width: "40%", top: "40%"
+    });
+    var dialog = $("#addialog").data("kendoWindow");
+    dialog.center();
+
+    $("#addialog").data("kendoWindow").open();
 
 }
