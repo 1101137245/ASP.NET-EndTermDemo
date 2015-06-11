@@ -44,28 +44,20 @@
 
     $("#GetoffArea").change(function () {
         ChangeStation("Getoff");
-
+    });
+    $("#GetoffStation").change(function () {
+        ChangeClass();
+    });
+    $("#AboardStation").change(function () {
+        ChangeClass();
     });
     $("#submit").click(function () {
         AddTicket();
+
     });
 
 
-    $.ajax({
-        url: "../data/data.aspx",
-        type: 'GET',
-        data: {
 
-        },
-        dataType: 'json',
-        success: function (data) {
-            console.log(data)
-
-        },
-        error: function () {
-            console.log("error");
-        }
-    });
 });
 
 function ChangeStation(x) {
@@ -91,13 +83,64 @@ function ChangeStation(x) {
         default:
             alert("請重新選擇");
             break;
-
     }
 
 
 }
+function ChangeClass() {
+    $.ajax({
+        url: "../data/data.aspx",
+        type: 'GET',
+        data: {
 
+        },
+        dataType: 'json',
+        success: function (data) {
+            UpdataClass(data)
 
+        },
+        error: function () {
+            console.log("Class can not fetch");
+        }
+    });
+}
+function UpdataClass(data) {
+    var AboardStation = $("#AboardStation").val();
+    var GetoffStation = $("#GetoffStation").val();
+    var Class1;
+    var Class2;
+    var Class3;
+    var Class4;
+    var Price;
+    var Number;
+    for (var i = 0; i < data.length; i++) {
+        if ((data[i].Aboard == AboardStation && data[i].Getoff == GetoffStation) ||
+            (data[i].Getoff == AboardStation && data[i].Aboard == GetoffStation))
+        {
+            Class1 = data[i].Class1;
+            Class2 = data[i].Class2;
+            Class3 = data[i].Class3;
+            Class4 = data[i].Class4;
+            Price = data[i].Price;
+            Number = data[i].Number;
+            $("#Number").val(Number);
+
+            $("#Price").val(Price);
+
+            $("#select-choice-a-menu").empty();
+     //       $("#select-choice-a-button > *").remove();
+            $('<ul class="ui-selectmenu-list ui-listview" id="select-choice-a-menu" role="listbox" aria-labelledby="select-choice-a-button">\n\
+                <li data-option-index="0" data-icon="false" data-placeholder="true" class="ui-screen-hidden" role="option" aria-selected="false">\n\
+                <a href="#" tabindex="-1" class="ui-btn">00:00 ~ 6:00</a></li>\n\
+                <li data-option-index="1" data-icon="false" class="ui-first-child" role="option" aria-selected="false">\n\
+                <a href="#" tabindex="-1" class="ui-btn">'+Class1+'</a></li>\n\
+                <li data-option-index="2" data-icon="false" class="" role="option" aria-selected="false">\n\
+                <a href="#" tabindex="-1" class="ui-btn">' + Class1 + '</a></li>\n\
+                <li data-option-index="3" data-icon="false" class="ui-last-child" role="option" aria-selected="false">\n\
+                <a href="#" tabindex="-1" class="ui-btn">' + Class1 + '</a></li></ul>').appendTo("#select-choice-a-menu");
+        }
+    }
+}
 function AddTicket() {
     $.ajax({
         url: "http://localhost:1073/api/Course",

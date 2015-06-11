@@ -20,7 +20,7 @@
     <div data-theme="a" data-role="page" id="index">
         <div data-role="header">
             <h1>Kuas 訂票</h1>
-            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a> 
+            <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
             <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
             <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">查詢個人訂票紀錄</a>
         </div>
@@ -95,18 +95,19 @@
                         </label>
                         <input id="Date" type="date" value="2015-06-08" />
                     </li>
+
                     <li>
                         <label>
                             乘車時間
                         </label>
                         <div class="ui-grid-a">
-                            <div class="ui-block-a">
-                                <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
-                                    <option>00:00 ~ 06:00</option>
-                                    <option value="01:00">01:00</option>
-                                    <option value="03:00">03:00</option>
-                                    <option value="05:00">05:00</option>
-                                </select>
+                            <div class="ui-block-a">                           
+                                    <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+                                        <option>00:00 ~ 06:00</option>
+                                        <option value="01:00">01:00</option>
+                                        <option value="03:00">03:00</option>
+                                        <option value="05:00">05:00</option>
+                                    </select>
                             </div>
                             <div class="ui-block-b">
                                 <select name="select-choice-b" id="select-choice-b" data-native-menu="false">
@@ -142,7 +143,13 @@
                     <li>
                         <label>
                             班次
-                            <input id="Number" type="text" placeholder="班次" />
+                            <input id="Number" type="text" placeholder="班次" readonly />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            單價
+                            <input id="Price" type="text" placeholder="單價" readonly />
                         </label>
                     </li>
                     <li>

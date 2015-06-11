@@ -13,7 +13,8 @@ namespace KuasWebApp.data
     {
         List<string> AboardNorth = new List<string>() { "臺北轉運站", "三重站", "南崁站", "板橋站", "中和站", "市府轉運站", "三峽站", "景美站", "新店站" };
         List<string> AboardTaichung = new List<string>() { "豐原站", "東勢站", "台中車站", "水湳站", "朝馬站" };
-
+        List<string> AboardChanghua = new List<string>() { "彰化交流道站", "彰化站", "員林站", "溪湖站", "二林站" };
+        List<string> AboardYunlin = new List<string>() { "豐原站", "東勢站", "台中車站", "水湳站", "朝馬站" };
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,6 +22,7 @@ namespace KuasWebApp.data
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             var responseEntities = new List<ClassBus>()
         {
+
             new ClassBus{ Aboard="臺北轉運站", Getoff="豐原站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
             new ClassBus{ Aboard="臺北轉運站", Getoff="東勢站",Number="1001",Price="210",Class1="120",Class2="60",Class3="45",Class4="60"},
             new 
