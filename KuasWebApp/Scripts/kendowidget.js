@@ -43,7 +43,7 @@
                         Aboard: { type: "string", editable: true, nullable: false },
                         Getoff: { type: "string", editable: true, nullable: false },
                         Number: { type: "string", editable: true, nullable: false },
-                        Site: { type: "string", editable: true, nullable: false },
+                        Phone: { type: "string", editable: true, nullable: false },
                         Price: { type: "string", editable: true, nullable: false }
                     }
                 }
@@ -77,7 +77,7 @@
             { field: "Getoff", title: "下車站", width: "40px" },
             { field: "Number", title: "車次", width: "40px" },
             { field: "Description", title: "數量", width: "40px" },
-            { field: "Site", title: "座位", width: "40px" },
+            { field: "Phone", title: "手機", width: "40px" },
             { field: "Price", title: "價格", width: "40px" },
 
             {
@@ -131,7 +131,7 @@
                             Aboard: { type: "string", editable: true, nullable: false },
                             Getoff: { type: "string", editable: true, nullable: false },
                             Number: { type: "string", editable: true, nullable: false },
-                            Site: { type: "string", editable: true, nullable: false },
+                            Phone: { type: "string", editable: true, nullable: false },
                             Price: { type: "string", editable: true, nullable: false }
                         }
                     }
@@ -153,7 +153,7 @@
                 { field: "Getoff", title: "下車站", width: "40px" },
                 { field: "Number", title: "車次", width: "40px" },
                 { field: "Description", title: "數量", width: "40px" },
-                { field: "Site", title: "座位", width: "40px" },
+                { field: "Phone", title: "手機", width: "40px" },
                 { field: "Price", title: "價格", width: "40px" },
 
 
@@ -162,7 +162,7 @@
 
         });
 
-        //window.location = "http://localhost:1073/Views/Index.html#Customersearch";
+        window.location = "../Views/Index.html#Customersearch";
     });
    
 

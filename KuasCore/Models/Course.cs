@@ -13,6 +13,7 @@ namespace KuasCore.Models
         public string Name { get; set; }
 
         public string Description { get; set; }
+        //數量
 
         public string Date { get; set; }
 
@@ -24,7 +25,7 @@ namespace KuasCore.Models
 
         public string Number { get; set; }
 
-        public string Site { get; set; }
+        public string Phone { get; set; }
 
         public string Price { get; set; }
 
