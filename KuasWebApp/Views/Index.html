@@ -26,8 +26,8 @@
             <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
                 <form>
                     <div style="padding:10px 20px;">
-                        <h3>查詢個人訂票紀錄</h3>
-                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機機:</label>
+                        <h3>查詢個人訂票</h3>
+                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機:</label>
                         <input type="text" name="customerphone" id="customerphone" value="" placeholder="手機號碼" data-theme="a">
                         <button type="submit" id="Customersearchsubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check">查詢</button>
                     </div>
@@ -35,7 +35,7 @@
             </div>
             <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">查詢個人訂票紀錄</a>
         </div>
-        
+
         <div data-role="main" class="ui-content">
             <div data-role="navbar">
                 <ul>
@@ -97,22 +97,21 @@
                         </label>
                         <input id="Date" type="date" value="2015-06-08" />
                     </li>
-
                     <li>
                         <label>
                             乘車時間
                         </label>
                         <div class="ui-grid-a">
-                            <div class="ui-block-a">                           
-                                    <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
-                                        <option>00:00 ~ 06:00</option>
-                                       
-                                    </select>
+                            <div class="ui-block-a">
+                                <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+                                    <option>00:00 ~ 06:00</option>
+
+                                </select>
                             </div>
                             <div class="ui-block-b">
                                 <select name="select-choice-b" id="select-choice-b" data-native-menu="false">
                                     <option>06:00 ~ 12:00</option>
-                                    
+
                                 </select>
                             </div>
                         </div>
@@ -120,13 +119,13 @@
                             <div class="ui-block-a">
                                 <select name="select-choice-c" id="select-choice-c" data-native-menu="false">
                                     <option>12:00 ~ 18:00</option>
-                                    
+
                                 </select>
                             </div>
                             <div class="ui-block-b">
                                 <select name="select-choice-d" id="select-choice-d" data-native-menu="false">
                                     <option>18:00 ~ 24:00</option>
-                                    
+
                                 </select>
                             </div>
                         </div>
@@ -242,7 +241,16 @@
         <div data-role="header">
             <h1>查詢訂票</h1>
             <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
-            <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>查詢個人訂票</h3>
+                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機:</label>
+                        <input type="text" name="customerphone" id="customerphone" value="" placeholder="手機號碼" data-theme="a">
+                        <button type="submit" id="Customersearchsubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check">查詢</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="content-pane">
             <div id="grid2"></div>

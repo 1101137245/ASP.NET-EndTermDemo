@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Http;
+using System.Web.UI.WebControls;
 
 namespace KuasWebApp.Controllers
 {
@@ -85,7 +86,9 @@ namespace KuasWebApp.Controllers
 
             if (course == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+                return null;
+                // throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
             return course;
