@@ -45,18 +45,20 @@
     $("#GetoffArea").change(function () {
         ChangeStation("Getoff");
     });
-    $("#GetoffStation").change(function () {
+    $("#GetoffStation,#AboardStation").change(function () {
         ChangeClass();
     });
-    $("#AboardStation").change(function () {
-        ChangeClass();
-    });
+
     $("#select-choice-a").change(function () {
         changeTimeselect();
     });
     $("#submit").click(function () {
         AddTicket();
 
+    });
+
+    $("#select-choice-a,select-choice-a,select-choice-a,select-choice-a").select(function () {
+        changeTimeselect();
     });
 
 
@@ -266,16 +268,16 @@ function UpdataClass(data) {
             }
             $("#select-choice-d").selectmenu("refresh");
 
-
         }
     }
 }
+
 function AddTicket() {
     $.ajax({
         url: "/api/Course",
         type: 'POST',
         data: {
-            Id: "54877",
+            Id: $("#Phone").val() + $("#Date").val()+"5487",
             Name: $("#Name").val(),
             Description: $("#Quantity").val(),
             Date: $("#Date").val(),
@@ -283,8 +285,8 @@ function AddTicket() {
             Time: "5487",
             Aboard: $("#AboardStation").val(),
             Getoff: $("#GetoffStation").val(),
-            Number: "1620",
-            Site: "10",
+            Number: $("#Number").val(),
+            Phone: $("#Phone").val(),
             Price: $("#Price").val() * $("#Quantity").val()
         },
         dataType: 'json',
