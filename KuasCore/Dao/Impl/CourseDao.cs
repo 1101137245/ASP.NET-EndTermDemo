@@ -74,12 +74,12 @@ namespace KuasCore.Dao.Impl
             return course;
         }
 
-        public Course GetCourseByName(string name)
+        public Course GetCourseByName(string phone)
         {
-            string command = @"SELECT * FROM Course WHERE Course_Name = @Name";
+            string command = @"SELECT * FROM Course WHERE Course_Phone = @phone";
 
             IDbParameters parameters = CreateDbParameters();
-            parameters.Add("Name", DbType.String).Value = name;
+            parameters.Add("Phone", DbType.String).Value = phone;
 
             IList<Course> course = ExecuteQueryWithRowMapper(command, parameters);
             if (course.Count > 0)

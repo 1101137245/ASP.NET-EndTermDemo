@@ -39,9 +39,9 @@ namespace KuasCore.Services.Impl
             return CourseDao.GetAllCourse();
         }
 
-        public Course GetCourseByName(string name)
+        public Course GetCourseByName(string phone)
         {
-            return CourseDao.GetCourseByName(name);
+            return CourseDao.GetCourseByName(phone);
         }
 
         public Course GetCourseById(string id)
