@@ -21,7 +21,7 @@ namespace KuasCore.Dao.Impl
 
         public void AddCourse(Course course)
         {
-            string command = @"INSERT INTO Course (Course_ID, Course_Name, Course_Description, Course_Date, Course_Time, Course_Aboard, Course_Getoff, Course_Number, Course_Site, Course_Price) VALUES (@Id, @Name, @Description, @Date, @Time, @Aboard, @Getoff, @Number, @Site, @Price);";
+            string command = @"INSERT INTO Course (Course_ID, Course_Name, Course_Description, Course_Date, Course_Time, Course_Aboard, Course_Getoff, Course_Number, Course_Phone, Course_Price) VALUES (@Id, @Name, @Description, @Date, @Time, @Aboard, @Getoff, @Number, @Phone, @Price);";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("Id", DbType.String).Value = course.Id;
@@ -31,7 +31,7 @@ namespace KuasCore.Dao.Impl
             parameters.Add("Aboard", DbType.String).Value = course.Aboard;
             parameters.Add("Getoff", DbType.String).Value = course.Getoff;
             parameters.Add("Number", DbType.String).Value = course.Number;
-            parameters.Add("Site", DbType.String).Value = course.Site;
+            parameters.Add("Phone", DbType.String).Value = course.Phone;
             parameters.Add("Price", DbType.String).Value = course.Price;
             parameters.Add("Description", DbType.String).Value = course.Description;
 
@@ -40,7 +40,7 @@ namespace KuasCore.Dao.Impl
 
         public void UpdateCourse(Course course)
         {
-            string command = @"UPDATE Course SET Course_Name = @Name, Course_Description = @Description ,Course_Date = @Date, Course_Time = @Time, Course_Aboard = @Aboard, Course_Getoff = @Getoff, Course_Number = @Number, Course_Site = @Site, Course_Price = @Price WHERE Course_Id = @Id;";
+            string command = @"UPDATE Course SET Course_Name = @Name, Course_Description = @Description ,Course_Date = @Date, Course_Time = @Time, Course_Aboard = @Aboard, Course_Getoff = @Getoff, Course_Number = @Number, Course_Phone = @Phone, Course_Price = @Price WHERE Course_Id = @Id;";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("Id", DbType.String).Value = course.Id;
@@ -51,7 +51,7 @@ namespace KuasCore.Dao.Impl
             parameters.Add("Aboard", DbType.String).Value = course.Aboard;
             parameters.Add("Getoff", DbType.String).Value = course.Getoff;
             parameters.Add("Number", DbType.String).Value = course.Number;
-            parameters.Add("Site", DbType.String).Value = course.Site;
+            parameters.Add("Phone", DbType.String).Value = course.Phone;
             parameters.Add("Price", DbType.String).Value = course.Price;
 
             ExecuteNonQuery(command, parameters);
@@ -74,12 +74,12 @@ namespace KuasCore.Dao.Impl
             return course;
         }
 
-        public Course GetCourseByName(string name)
+        public Course GetCourseByName(string phone)
         {
-            string command = @"SELECT * FROM Course WHERE Course_Name = @Name";
+            string command = @"SELECT * FROM Course WHERE Course_Phone = @phone";
 
             IDbParameters parameters = CreateDbParameters();
-            parameters.Add("Name", DbType.String).Value = name;
+            parameters.Add("Phone", DbType.String).Value = phone;
 
             IList<Course> course = ExecuteQueryWithRowMapper(command, parameters);
             if (course.Count > 0)

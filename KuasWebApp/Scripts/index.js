@@ -51,6 +51,9 @@
     $("#AboardStation").change(function () {
         ChangeClass();
     });
+    $("#select-choice-a").change(function () {
+        changeTimeselect();
+    });
     $("#submit").click(function () {
         AddTicket();
 
@@ -269,7 +272,7 @@ function UpdataClass(data) {
 }
 function AddTicket() {
     $.ajax({
-        url: "http://localhost:1073/api/Course",
+        url: "/api/Course",
         type: 'POST',
         data: {
             Id: "5487",
@@ -282,7 +285,7 @@ function AddTicket() {
             Getoff: $("#GetoffStation").val(),
             Number: "1620",
             Site: "10",
-            Price: "500"
+            Price: $("#Price").val() * $("#Quantity").val()
         },
         dataType: 'json',
         success: function (data) {
@@ -317,5 +320,13 @@ function SuccessAdd() {
     dialog.center();
 
     $("#addialog").data("kendoWindow").open();
+
+}
+
+function changeTimeselect() {
+
+
+
+
 
 }

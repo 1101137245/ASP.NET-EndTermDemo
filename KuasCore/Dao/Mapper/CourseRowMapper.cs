@@ -23,7 +23,7 @@ namespace KuasCore.Dao.Mapper
             target.Aboard = dataReader.GetString(dataReader.GetOrdinal("Course_Aboard"));
             target.Getoff = dataReader.GetString(dataReader.GetOrdinal("Course_Getoff"));
             target.Number = dataReader.GetString(dataReader.GetOrdinal("Course_Number"));
-            target.Site = dataReader.GetString(dataReader.GetOrdinal("Course_Site"));
+            target.Phone = dataReader.GetString(dataReader.GetOrdinal("Course_Phone"));
             target.Price = dataReader.GetString(dataReader.GetOrdinal("Course_Price"));
 
             return target;

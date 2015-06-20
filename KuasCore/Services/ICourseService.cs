@@ -17,7 +17,7 @@ namespace KuasCore.Services
 
         IList<Course> GetAllCourse();
 
-        Course GetCourseByName(string name);
+        Course GetCourseByName(string phone);
 
         Course GetCourseById(string id);
     }
