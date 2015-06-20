@@ -26,8 +26,8 @@
             <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
                 <form>
                     <div style="padding:10px 20px;">
-                        <h3>查詢個人訂票紀錄</h3>
-                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機機:</label>
+                        <h3>查詢個人訂票</h3>
+                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機:</label>
                         <input type="text" name="customerphone" id="customerphone" value="" placeholder="手機號碼" data-theme="a">
                         <button type="submit" id="Customersearchsubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check">查詢</button>
                     </div>
@@ -98,7 +98,7 @@
                         <input id="Date" type="date" value="2015-06-08" />
                     </li>
 
-                    <li id="time">
+                    <li>
                         <label>
                             乘車時間
                         </label>
@@ -242,7 +242,16 @@
         <div data-role="header">
             <h1>查詢訂票</h1>
             <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
-            <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>查詢個人訂票</h3>
+                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機:</label>
+                        <input type="text" name="customerphone" id="customerphone" value="" placeholder="手機號碼" data-theme="a">
+                        <button type="submit" id="Customersearchsubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check">查詢</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="content-pane">
             <div id="grid2"></div>

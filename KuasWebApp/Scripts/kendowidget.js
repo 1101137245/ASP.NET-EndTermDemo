@@ -107,9 +107,29 @@
     });
 
     $("#Customersearchsubmit").click(function () {
-
         var phone = $("#customerphone").val();
+
+        $.ajax({
+            url: "/api/Course/Name/" + phone,
+            type: 'GET',
+            data: {
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data == null) {
+                    alert("找不到辣!");
+                }
+                else {
+                    getkendoGrid();
+                }
+
+            },
+            error: function () {
         
+            }
+        });
+
+        function getkendoGrid() {
         $("#grid2").kendoGrid({
             dataSource: {
                 dataType: "jsonp",
@@ -161,13 +181,15 @@
 
 
             ]
+            });
+            window.location = "../Views/Index.html#Customersearch";
+        }
 
 
-        });
 
-        window.location = "../Views/Index.html#Customersearch";
+
     });
-
+   
     $("#select-choice-a,select-choice-a,select-choice-a,select-choice-a").kendoDropDownList({
         dataTextField: "text",
         dataValueField: "value",
