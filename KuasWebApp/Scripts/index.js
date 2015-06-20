@@ -275,7 +275,7 @@ function AddTicket() {
         url: "/api/Course",
         type: 'POST',
         data: {
-            Id: "5487",
+            Id: "54877",
             Name: $("#Name").val(),
             Description: $("#Quantity").val(),
             Date: $("#Date").val(),
@@ -294,7 +294,7 @@ function AddTicket() {
 
         },
         error: function () {
-            alert("");
+            alert("無法新增!");
         }
     });
 

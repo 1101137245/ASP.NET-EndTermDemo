@@ -5,9 +5,13 @@
 h1, label {
     color: royalblue;
     font-family: '微軟正黑體';
+    font-size: 16pt;
 }
 
 .ui-btn {
     font-family: '微軟正黑體';
     color: royalblue;
+}
+#grid{
+    height:100%;
 }
