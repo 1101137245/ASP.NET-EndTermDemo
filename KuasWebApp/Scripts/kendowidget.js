@@ -190,13 +190,5 @@
 
     });
    
-    $("#select-choice-a,select-choice-a,select-choice-a,select-choice-a").kendoDropDownList({
-        dataTextField: "text",
-        dataValueField: "value",
-        select: function () {
-            console.log("123");
-        }
-    });
-   
 
 });

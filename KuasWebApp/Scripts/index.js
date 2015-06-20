@@ -49,7 +49,7 @@
         ChangeClass();
     });
 
-    $("#select-choice-a").change(function () {
+    $("#select-choice-a,#select-choice-b,#select-choice-c,#select-choice-d").change(function () {
         changeTimeselect();
     });
     $("#submit").click(function () {
@@ -57,9 +57,6 @@
 
     });
 
-    $("#select-choice-a,select-choice-a,select-choice-a,select-choice-a").select(function () {
-        changeTimeselect();
-    });
 
 
 
@@ -102,7 +99,6 @@ function ChangeClass() {
         dataType: 'json',
         success: function (data) {
             UpdataClass(data);
-            console.log(data);
 
         },
         error: function () {
@@ -118,7 +114,6 @@ function UpdataClass(data) {
     for (var i = 0; i < data.length; i++) {
         if ((data[i].Aboard == AboardStation && data[i].Getoff == GetoffStation) ||
             (data[i].Getoff == AboardStation && data[i].Aboard == GetoffStation)) {
-            console.log(data[i].Class1);
             Class1 = parseInt(data[i].Class1);
             Class2 = parseInt(data[i].Class2);
             Class3 = parseInt(data[i].Class3);
@@ -326,9 +321,28 @@ function SuccessAdd() {
 }
 
 function changeTimeselect() {
+    var time1 = $("#select-choice-a").val();
+    var time2 = $("#select-choice-b").val()
+    var time3 = $("#select-choice-c").val()
+    var time4 = $("#select-choice-d").val()
+    var selectedsum = 0;
+    if (time1 != "0") {
+        selectedsum++;
+    }
+    if (time2 != "0") {
+        selectedsum++;
+    }
+    if (time3 != "0") {
+        selectedsum++;
+    }
+    if (time4 != "0") {
+        selectedsum++;
+    }
+    if (selectedsum > 1) {
+        console.log("請勿選擇兩個以上的時段");
+        
+    } else {
 
-
-
-
+    }
 
 }
