@@ -276,8 +276,7 @@ function AddTicket() {
             Name: $("#Name").val(),
             Description: $("#Quantity").val(),
             Date: $("#Date").val(),
-            //            Time: $("#Time").val(),
-            Time: "5487",
+            Time: $("#Time").val(),
             Aboard: $("#AboardStation").val(),
             Getoff: $("#GetoffStation").val(),
             Number: $("#Number").val(),
@@ -325,24 +324,21 @@ function changeTimeselect() {
     var time2 = $("#select-choice-b").val()
     var time3 = $("#select-choice-c").val()
     var time4 = $("#select-choice-d").val()
-    var selectedsum = 0;
-    if (time1 != "0") {
-        selectedsum++;
+    if (time1 != "0"&& $("#Time").val()=="") {
+        $("#Time").val(time1);
+        $("#select-choice-b,#select-choice-c,#select-choice-d").selectmenu("disable");
     }
-    if (time2 != "0") {
-        selectedsum++;
+    if (time2 != "0" && $("#Time").val() == "") {
+        $("#Time").val(time2);
+        $("#select-choice-a,#select-choice-c,#select-choice-d").selectmenu("disable");
     }
-    if (time3 != "0") {
-        selectedsum++;
+    if (time3 != "0"&& $("#Time").val()=="") {
+        $("#Time").val(time3);
+        $("#select-choice-b,#select-choice-a,#select-choice-d").selectmenu("disable");
     }
-    if (time4 != "0") {
-        selectedsum++;
-    }
-    if (selectedsum > 1) {
-        console.log("請勿選擇兩個以上的時段");
-        
-    } else {
-
+    if (time4 != "0" && $("#Time").val() == "") {
+        $("#Time").val(time4);
+        $("#select-choice-b,#select-choice-c,#select-choice-a").selectmenu("disable");
     }
 
 }
