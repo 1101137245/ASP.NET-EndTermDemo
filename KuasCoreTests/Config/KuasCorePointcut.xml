@@ -5,7 +5,7 @@
   <object id="executionTimeInterceptor" type="KuasCore.Interceptors.ExecutionTimeInterceptor" />
 
   <object id="executionTimePointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
-    <property name="Pattern" value="KuasCore.Dao.Impl.*Dao.DeleteCourse" />
+    <property name="Pattern" value="KuasCore.Dao.Impl.*Dao.DeleteTicket" />
   </object>
 
   <aop:config>

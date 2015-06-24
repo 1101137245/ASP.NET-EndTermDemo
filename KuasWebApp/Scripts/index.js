@@ -269,7 +269,7 @@ function UpdataClass(data) {
 
 function AddTicket() {
     $.ajax({
-        url: "/api/Course",
+        url: "/api/Ticket",
         type: 'POST',
         data: {
             Id: $("#Phone").val() + $("#Date").val()+"5487",

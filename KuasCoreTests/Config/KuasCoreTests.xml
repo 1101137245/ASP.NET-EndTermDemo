@@ -2,11 +2,11 @@
 
 <objects xmlns="http://www.springframework.net">
 
-  <object id="courseService" type="KuasCore.Services.Impl.CourseService, KuasCore">
-    <property name="CourseDao" ref="courseDao" />
+  <object id="ticketService" type="KuasCore.Services.Impl.TicketService, KuasCore">
+    <property name="TicketDao" ref="ticketDao" />
   </object>
 
-  <object id="courseDao" type="KuasCore.Dao.Impl.CourseDao, KuasCore">
+  <object id="ticketDao" type="KuasCore.Dao.Impl.TicketDao, KuasCore">
     <property name="AdoTemplate" ref="adoTemplate" />
   </object>
 

@@ -170,7 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="data\data.aspx.cs">
       <DependentUpon>data.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
