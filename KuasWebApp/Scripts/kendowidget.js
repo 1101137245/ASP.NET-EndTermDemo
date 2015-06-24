@@ -41,7 +41,7 @@
                 model: {
                     id: "Id",
                     fields: {
-                        Id: { type: "string", editable: true, nullable: false },
+                       // Id: { type: "string", editable: true, nullable: false },
                         Name: { type: "string", editable: true, nullable: false },
                         Description: { type: "string", editable: true },
                         Date: { type: "string", editable: true, nullable: false },
@@ -64,7 +64,7 @@
 
         editable: {
             confirmation: function (e) {
-                return "確定刪除編號 " + e.Id + "," + e.Name + "?";
+                return "確定刪除 " + "," + e.Name + "?";
             },
             mode: "inline"
         },
@@ -75,7 +75,7 @@
         }],
         pageable: false,
         columns: [
-            { field: "Id", title: "編號", width: "5px" },
+         //   { field: "Id", title: "編號", width: "5px" },
             { field: "Name", title: "姓名", width: "40px" },
             { field: "Phone", title: "手機", width: "40px" },
             { field: "Date", title: "日期", width: "40px" },
@@ -149,7 +149,7 @@
                     model: {
                         id: "Id",
                         fields: {
-                            Id: { type: "string", editable: true, nullable: false },
+                   //         Id: { type: "string", editable: true, nullable: false },
                             Name: { type: "string", editable: true, nullable: false },
                             Phone: { type: "string", editable: true, nullable: false },
                             Description: { type: "string", editable: true },
@@ -168,7 +168,7 @@
             sortable: true,
             scrollable: false,
             columns: [
-                { field: "Id", title: "編號", width: "5px" },
+            //    { field: "Id", title: "編號", width: "5px" },
                 { field: "Name", title: "姓名", width: "40px" },
                 { field: "Date", title: "日期", width: "40px" },
                 { field: "Time", title: "時間", width: "40px" },
