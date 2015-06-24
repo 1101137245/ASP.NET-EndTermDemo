@@ -96,9 +96,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Dao\CourseDaoUnitTest.cs" />
+    <Compile Include="Dao\TicketDaoUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Impl\CourseServiceUnitTest.cs" />
+    <Compile Include="Services\Impl\TicketServiceUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KuasCore\KuasCore.csproj">

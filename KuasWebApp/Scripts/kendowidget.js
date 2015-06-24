@@ -12,22 +12,22 @@
             dataType: "jsonp",
             transport: {
                 read: {
-                    url: UrlBase + "api/Course",
+                    url: UrlBase + "api/Ticket",
                     contentType: "application/json; charset=utf-8",
                     type: "GET"
                 },
                 create: {
-                    url: UrlBase + "api/Course",
+                    url: UrlBase + "api/Ticket",
                     contentType: "application/json; charset=utf-8",
                     type: "POST"
                 },
                 update: {
-                    url: UrlBase + "api/Course",
+                    url: UrlBase + "api/Ticket",
                     contentType: "application/json; charset=utf-8",
                     type: "PUT"
                 },
                 destroy: {
-                    url: UrlBase + "api/Course",
+                    url: UrlBase + "api/Ticket",
                     contentType: "application/json; charset=utf-8",
                     type: "DELETE"
                 },
@@ -110,7 +110,7 @@
         var phone = $("#customerphone").val();
 
         $.ajax({
-            url: "/api/Course/Name/" + phone,
+            url: "/api/Ticket/Name/" + phone,
             type: 'GET',
             data: {
             },
@@ -135,7 +135,7 @@
                 dataType: "jsonp",
                 transport: {
                     read: {
-                        url: UrlBase + "api/Course/Name/" + phone,
+                        url: UrlBase + "api/Ticket/Name/" + phone,
                         contentType: "application/json; charset=utf-8",
                         type: "GET"
                     },
