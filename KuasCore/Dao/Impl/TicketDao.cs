@@ -21,7 +21,7 @@ namespace KuasCore.Dao.Impl
 
         public void AddTicket(Ticket ticket)
         {
-            string command = @"INSERT INTO Ticket (Ticket_ID, Ticket_Name, Ticket_Description, Ticket_Date, Ticket_Time, Ticket_Aboard, Ticket_Getoff, Ticket_Number, Ticket_Phone, Ticket_Price) VALUES (@Id, @Name, @Description, @Date, @Time, @Aboard, @Getoff, @Number, @Phone, @Price);";
+            string command = @"INSERT INTO Ticket (Ticket_ID, Ticket_Name, Ticket_Quantity, Ticket_Date, Ticket_Time, Ticket_Aboard, Ticket_Getoff, Ticket_Number, Ticket_Phone, Ticket_Price) VALUES (@Id, @Name, @Quantity, @Date, @Time, @Aboard, @Getoff, @Number, @Phone, @Price);";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("Id", DbType.String).Value = ticket.Id;
@@ -33,19 +33,19 @@ namespace KuasCore.Dao.Impl
             parameters.Add("Number", DbType.String).Value = ticket.Number;
             parameters.Add("Phone", DbType.String).Value = ticket.Phone;
             parameters.Add("Price", DbType.String).Value = ticket.Price;
-            parameters.Add("Description", DbType.String).Value = ticket.Description;
+            parameters.Add("Quantity", DbType.String).Value = ticket.Quantity;
 
             ExecuteNonQuery(command, parameters);
         }
 
         public void UpdateTicket(Ticket ticket)
         {
-            string command = @"UPDATE Ticket SET Ticket_Name = @Name, Ticket_Description = @Description ,Ticket_Date = @Date, Ticket_Time = @Time, Ticket_Aboard = @Aboard, Ticket_Getoff = @Getoff, Ticket_Number = @Number, Ticket_Phone = @Phone, Ticket_Price = @Price WHERE Ticket_Id = @Id;";
+            string command = @"UPDATE Ticket SET Ticket_Name = @Name, Ticket_Quantity = @Quantity ,Ticket_Date = @Date, Ticket_Time = @Time, Ticket_Aboard = @Aboard, Ticket_Getoff = @Getoff, Ticket_Number = @Number, Ticket_Phone = @Phone, Ticket_Price = @Price WHERE Ticket_Id = @Id;";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("Id", DbType.String).Value = ticket.Id;
             parameters.Add("Name", DbType.String).Value = ticket.Name;
-            parameters.Add("Description", DbType.String).Value = ticket.Description;
+            parameters.Add("Quantity", DbType.String).Value = ticket.Quantity;
             parameters.Add("Date", DbType.String).Value = ticket.Date;
             parameters.Add("Time", DbType.String).Value = ticket.Time;
             parameters.Add("Aboard", DbType.String).Value = ticket.Aboard;

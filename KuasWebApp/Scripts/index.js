@@ -274,7 +274,7 @@ function AddTicket() {
         data: {
             Id: $("#Phone").val() + $("#Date").val()+"5487",
             Name: $("#Name").val(),
-            Description: $("#Quantity").val(),
+            Quantity: $("#Quantity").val(),
             Date: $("#Date").val(),
             Time: $("#Time").val(),
             Aboard: $("#AboardStation").val(),

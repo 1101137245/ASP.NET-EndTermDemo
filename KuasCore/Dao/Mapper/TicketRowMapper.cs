@@ -17,7 +17,7 @@ namespace KuasCore.Dao.Mapper
 
             target.Id = dataReader.GetString(dataReader.GetOrdinal("Ticket_ID"));
             target.Name = dataReader.GetString(dataReader.GetOrdinal("Ticket_Name"));
-            target.Description = dataReader.GetString(dataReader.GetOrdinal("Ticket_Description"));
+            target.Quantity = dataReader.GetString(dataReader.GetOrdinal("Ticket_Quantity"));
             target.Date = dataReader.GetString(dataReader.GetOrdinal("Ticket_Date"));
             target.Time = dataReader.GetString(dataReader.GetOrdinal("Ticket_Time"));
             target.Aboard = dataReader.GetString(dataReader.GetOrdinal("Ticket_Aboard"));

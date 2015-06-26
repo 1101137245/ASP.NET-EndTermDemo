@@ -38,12 +38,12 @@ namespace KuasCoreTests.Dao
         public void TestTicketDao_AddTicket()
         {
             Ticket ticket = new Ticket();
-            ticket.Id = "UnitTests";
+            ticket.Id = "09XXXXXXXX-2999/13/3325:61:62";
             ticket.Name = "單元測試";
             ticket.Phone = "09XXXXXXXX";
-            ticket.Description = "X張";
-            ticket.Date = "2999/13/32";
-            ticket.Time = "25:61:61";
+            ticket.Quantity = "X張";
+            ticket.Date = "2999/13/33";
+            ticket.Time = "25:61:62";
             ticket.Aboard = "金門";
             ticket.Getoff = "馬祖";
             ticket.Number = "1000";
@@ -57,7 +57,7 @@ namespace KuasCoreTests.Dao
             Console.WriteLine("訂票編號為 = " + dbTicket.Id);
             Console.WriteLine("訂票人為 = " + dbTicket.Name);
             Console.WriteLine("手機為 = " + dbTicket.Phone);
-            Console.WriteLine("訂票數量為 = " + dbTicket.Description);
+            Console.WriteLine("訂票數量為 = " + dbTicket.Quantity);
             Console.WriteLine("乘車日期為 = " + dbTicket.Date);
             Console.WriteLine("乘車時間為 = " + dbTicket.Time);
             Console.WriteLine("上車站為 = " + dbTicket.Aboard);
@@ -65,9 +65,9 @@ namespace KuasCoreTests.Dao
             Console.WriteLine("車次為 = " + dbTicket.Number);
             Console.WriteLine("總金額為 = " + dbTicket.Price);
 
-            TicketDao.DeleteTicket(dbTicket);
+           /* TicketDao.DeleteTicket(dbTicket);
             dbTicket = TicketDao.GetTicketByName(ticket.Phone);
-            Assert.IsNull(dbTicket);
+            Assert.IsNull(dbTicket);*/
         }
 
     }

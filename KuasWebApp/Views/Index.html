@@ -35,12 +35,12 @@
             </div>
             <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">查詢個人訂票紀錄</a>
         </div>
-        
+
         <div data-role="main" class="ui-content">
             <div data-role="navbar">
                 <ul>
                     <li><a href="#index" data-icon="plus">開始訂票</a></li>
-                    <li><a href="#edit" data-icon="check">修改訂票</a></li>
+                    <li><a href="#edit" data-icon="check">關於我們</a></li>
                 </ul>
             </div>
         </div>
@@ -97,7 +97,6 @@
                         </label>
                         <input id="Date" type="date" value="2015-06-08" />
                     </li>
-
                     <li>
                         <label>
                             乘車時間
@@ -105,15 +104,15 @@
                         </label>
                         <div class="ui-grid-a">
                             <div class="ui-block-a">
-                                    <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
-                                        <option value="0">00:00 ~ 06:00</option>
-                                       
-                                    </select>
+                                <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+                                    <option value="0">00:00 ~ 06:00</option>
+
+                                </select>
                             </div>
                             <div class="ui-block-b">
                                 <select name="select-choice-b" id="select-choice-b" data-native-menu="false">
                                     <option value="0">06:00 ~ 12:00</option>
-                                    
+
                                 </select>
                             </div>
                         </div>
@@ -121,13 +120,13 @@
                             <div class="ui-block-a">
                                 <select name="select-choice-c" id="select-choice-c" data-native-menu="false">
                                     <option value="0">12:00 ~ 18:00</option>
-                                    
+
                                 </select>
                             </div>
                             <div class="ui-block-b">
                                 <select name="select-choice-d" id="select-choice-d" data-native-menu="false">
                                     <option value="0">18:00 ~ 24:00</option>
-                                    
+
                                 </select>
                             </div>
                         </div>
@@ -165,11 +164,12 @@
                     <li>
                         <div class="ui-grid-a">
                             <div class="ui-block-a">
-                                <button id="clear" data-theme="b">清除</button>
-                            </div>
-                            <div class="ui-block-b">
                                 <button id="submit">送出</button>
                             </div>
+                            <div class="ui-block-b">
+                                <button id="clear" data-theme="b">清除</button>
+                            </div>
+
                         </div>
                     </li>
                 </ul>
@@ -208,7 +208,7 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#index" data-icon="plus">開始訂票</a></li>
-                <li><a href="#edit" data-icon="check">修改訂票</a></li>
+                <li><a href="#edit" data-icon="check">關於我們</a></li>
             </ul>
         </div>
         <div class="content-pane">
@@ -221,19 +221,47 @@
     <!-- Page 3 -->
     <div data-role="page" id="edit">
         <div data-role="header">
-            <h1>查詢訂票</h1>
+            <h1>聯絡我們</h1>
             <a href="#index" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">首頁</a>
-            <a href="#search" data-transition="slide" class="ui-btn ui-corner-all ui-shadow  ui-icon-grid ui-btn-icon-left">查詢</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>查詢個人訂票</h3>
+                        <label for="customerphone" class="ui-hidden-accessible">請輸入您手機:</label>
+                        <input type="text" name="customerphone" id="customerphone" value="" placeholder="手機號碼" data-theme="a">
+                        <button type="submit" id="Customersearchsubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check">查詢</button>
+                    </div>
+                </form>
+            </div>
+            <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">查詢個人訂票紀錄</a>
         </div>
         <div data-role="navbar">
             <ul>
                 <li><a href="#index" data-icon="plus">開始訂票</a></li>
-                <li><a href="#edit" data-icon="check">修改訂票</a></li>
+                <li><a href="#edit" data-icon="check">關於我們</a></li>
             </ul>
         </div>
+        <div class="content-pane"> 
+                <div data-role="collapsible">
+                    <h1>關於K訂票</h1>
+                    <p>我們是一個充滿熱情的訂票網站 :)</p>
+                </div>
+            </div>
         <div class="content-pane">
-            <div id="grid"></div>
+            <div data-role="collapsible">
+                <h1>人才招募</h1>
+                <p>請聯絡人資部A經理</p>
+                <p>Tel: 0800-000-123轉123 </p>
+            </div>
         </div>
+        <div class="content-pane">
+            <div data-role="collapsible">
+                <h1>聯絡資訊</h1>
+                <p>EMail: XXX@mail.com</p>
+                <p>Tel: 123456789 </p>
+            </div>
+        </div>
+        
         <div data-role="footer" style="text-align:center;">
             2015 ASP.NET by KuasMis&reg;
         </div>
