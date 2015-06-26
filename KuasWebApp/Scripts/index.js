@@ -54,8 +54,12 @@
     });
     $("#submit").click(function () {
         AddTicket();
+        window.location = "../Views/Index.html";
 
     });
+    $("#clear").click(function () {
+        window.location = "../Views/Index.html";
+    })
 
 
 
@@ -272,7 +276,7 @@ function AddTicket() {
         url: "/api/Ticket",
         type: 'POST',
         data: {
-            Id: $("#Phone").val() + $("#Date").val()+"5487",
+            Id: $("#Phone").val() + $("#Date").val()+$("#Time").val(),
             Name: $("#Name").val(),
             Quantity: $("#Quantity").val(),
             Date: $("#Date").val(),
