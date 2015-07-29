@@ -1,11 +1,11 @@
-﻿using KuasCore.Models;
+﻿using EnjoyEatCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KuasCore.Dao
+namespace EnjoyEatCore.Dao
 {
      public interface ITicketDao
     {

@@ -1,5 +1,5 @@
-﻿using KuasCore.Models;
-using KuasCore.Services;
+﻿using EnjoyEatCore.Models;
+using EnjoyEatCore.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.UI.WebControls;
 
-namespace KuasWebApp.Controllers
+namespace EnjoyEatWebApp.Controllers
 {
     public class TicketController : ApiController
     {

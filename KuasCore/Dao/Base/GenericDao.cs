@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KuasCore.Dao.Base
+namespace EnjoyEatCore.Dao.Base
 {
     abstract public class GenericDao<T> : AdoDaoSupport
     {

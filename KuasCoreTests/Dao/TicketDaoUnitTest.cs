@@ -1,6 +1,6 @@
-﻿using KuasCore.Dao;
-using KuasCore.Models;
-using KuasCore.Services.Impl;
+﻿using EnjoyEatCore.Dao;
+using EnjoyEatCore.Models;
+using EnjoyEatCore.Services.Impl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spring.Testing.Microsoft;
 using System;

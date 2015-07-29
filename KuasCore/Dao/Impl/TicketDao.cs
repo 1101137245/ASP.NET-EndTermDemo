@@ -1,6 +1,6 @@
-﻿using KuasCore.Dao.Base;
-using KuasCore.Dao.Mapper;
-using KuasCore.Models;
+﻿using EnjoyEatCore.Dao.Base;
+using EnjoyEatCore.Dao.Mapper;
+using EnjoyEatCore.Models;
 using Spring.Data.Common;
 using Spring.Data.Generic;
 using System;
@@ -10,8 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KuasCore.Dao.Impl
-{
+namespace EnjoyEatCore.Dao.Impl
+{    
     public class TicketDao : GenericDao<Ticket>, ITicketDao
     {
         override protected IRowMapper<Ticket> GetRowMapper()

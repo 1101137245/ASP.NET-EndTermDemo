@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KuasCore.Interceptors
+namespace EnjoyEatCore.Interceptors
 {
     class ExecutionTimeInterceptor : IMethodInterceptor
     {

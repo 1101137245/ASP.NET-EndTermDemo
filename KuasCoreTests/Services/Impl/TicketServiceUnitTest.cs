@@ -1,6 +1,6 @@
 ﻿using Core;
-using KuasCore.Models;
-using KuasCore.Services;
+using EnjoyEatCore.Models;
+using EnjoyEatCore.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spring.Context;
 using Spring.Testing.Microsoft;

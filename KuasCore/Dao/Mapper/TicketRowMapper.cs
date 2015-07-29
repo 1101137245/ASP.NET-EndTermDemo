@@ -1,4 +1,4 @@
-﻿using KuasCore.Models;
+﻿using EnjoyEatCore.Models;
 using Spring.Data.Generic;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KuasCore.Dao.Mapper
+namespace EnjoyEatCore.Dao.Mapper
 {
     class TicketRowMapper : IRowMapper<Ticket>
     {
@@ -25,6 +25,7 @@ namespace KuasCore.Dao.Mapper
             target.Number = dataReader.GetString(dataReader.GetOrdinal("Ticket_Number"));
             target.Phone = dataReader.GetString(dataReader.GetOrdinal("Ticket_Phone"));
             target.Price = dataReader.GetString(dataReader.GetOrdinal("Ticket_Price"));
+
 
             return target;
         }

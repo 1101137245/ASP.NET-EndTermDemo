@@ -1,13 +1,13 @@
-﻿using KuasCore.Dao;
-using KuasCore.Dao.Impl;
-using KuasCore.Models;
+﻿using EnjoyEatCore.Dao;
+using EnjoyEatCore.Dao.Impl;
+using EnjoyEatCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KuasCore.Services.Impl
+namespace EnjoyEatCore.Services.Impl
 {
     public class TicketService : ITicketService
     {
